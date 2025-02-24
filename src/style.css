@@ -1,0 +1,221 @@
+:root {
+    font-family: 'Kalam', cursive;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* App container Styles */
+.app {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    opacity: 0.8;
+    background-image: radial-gradient(#bdbfd8 1.35px, transparent 1.35px), radial-gradient(#bdbfd8 1.35px, #ffffff 1.35px);
+    background-size: 54px 54px;
+    background-position: 0 0, 27px 27px;
+}
+
+/* Card or main content styles */
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 1rem;
+    background: #ffffff;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tabs Styles */
+.tab {
+    padding: 0.25rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tab-radio {
+    position: absolute;
+    appearance: none;
+}
+
+.tab-label-btn {
+    display: inline-block;
+    padding: 0.25rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.tab-radio#tab-goals:checked+.tab-label-btn {
+    border: 2px solid #000;
+    background: #fef08a;
+}
+
+.tab-radio#tab-links:checked+.tab-label-btn {
+    border: 2px solid #000;
+    background: #fef08a;
+}
+
+/* Form Goals styles */
+.form {
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.form-date {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.form-field {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    font-family: 'Kalam', cursive;
+    font-size: 1.125rem;
+    color: #000;
+    outline: none;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    background: #e9d5ff;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    font-family: 'Kalam', cursive;
+    font-size: 1.125rem;
+    color: #000;
+    outline: none;
+    cursor: pointer;
+}
+
+.form-submit:active {
+    transform: scale(0.9);
+}
+
+/* Goals and Link List Styles */
+.goals-container,
+.links-container {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.goals-container-list,
+.links-container-list {
+    margin-top: 1rem;
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.goals-container-list .card,
+.links-container-list .card {
+    padding: 0.5rem;
+    background: #ffffff;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+}
+
+.links-container-list .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.links-container-list .card-link {
+    width: 100%;
+    text-decoration: none;
+}
+
+.links-container-list .card-description {
+    color: #000;
+}
+
+.goals-container-list .card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.goals-container-list .card-body {
+    font-size: 1.125rem;
+}
+
+.goals-container-list .card-check {
+    appearance: none;
+}
+
+.goals-container-list .card-check::after {
+    content: '';
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    border: 2px solid #000;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.goals-container-list .card-check:checked::after {
+    content: '✔';
+    background: #60a5fa;
+}
+
+.goals-container-list .card-body:has(+ .card-check:checked) {
+    text-decoration: line-through;
+}
+
+.goals-container-list .card-footer {
+    border-top: 2px solid #d1d5db;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goals-container-list .card-delete,
+.links-container-list .card-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #6b7280;
+    z-index: 1;
+}
+
+.goals-container-list .card-delete:hover,
+.links-container-list .card-delete:hover {
+    color: #000;
+}
